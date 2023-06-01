@@ -30,36 +30,32 @@ class index {
     }
 
     public static void main(String args[]) {
-        int x, y;
+        int x, y, z;
         try (Scanner scan = new Scanner(System.in)) {
             x = checkvalidinteger(scan, "Enter first number");
             y = checkvalidinteger(scan, "Enter Second number");
+
+            System.out.println("Press 1 for addition");
+            System.out.println("Press 2 for Subtraction");
+            System.out.println("Press 3 for Division");
+            
+            z = checkvalidinteger(scan, "Enter a number from 1-3:");
+        }
+        if (z == 1) {
+            int result = add(x, y);
+            System.out.println("The sum is " + result);
         }
 
-        System.out.println("Press 1 for addition");
-        System.out.println("Press 2 for Subtraction");
-        System.out.println("Press 3 for Division");
-
-        try (Scanner sc = new Scanner(System.in)) {
-            int z = sc.nextInt();
-
-            if (z == 1) {
-                int result = add(x, y);
-                System.out.println("The sum is " + result);
-            }
-
-            else if (z == 2) {
-                int result = sub(x, y);
-                System.out.println("The difference is " + result);
-            }
-             else if (z == 3) {
-                int result = div(x, y);
-                System.out.println("The division is " + result);
-            } 
-            else {
-                System.out.println("Invalid");
-            }
+        else if (z == 2) {
+            int result = sub(x, y);
+            System.out.println("The difference is " + result);
+        } else if (z == 3) {
+            int result = div(x, y);
+            System.out.println("The division is " + result);
+        } else {
+            System.out.println("Invalid");
         }
 
     }
+
 }
